@@ -1,6 +1,6 @@
-# Fullstack Restful API Boilerplace with DjangoRestFramework
+# Django Restful API Boilerplate
 
-A demo Job Portal application based on Fullstack Restful API Boilerplace use DjangoRestFramework, PostgresQL.
+A Boilerplate for quickstart a Restful APIs use Django Rest Framework, PostgresQL.
 
 ## Features
 
