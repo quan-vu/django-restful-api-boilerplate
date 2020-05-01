@@ -14,14 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.conf.urls import url
-from core import views as core_views
+from django.urls import path
 from rest_framework_simplejwt import views as jwt_views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/auth/', include('authjwt.urls')),
-    path('api/ping/', core_views.PingView.as_view(), name='client_ping'),    
+    # /api/auth/
+    path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    # Allow API users to verify HMAC-signed tokens without having access to signing key
+    # path('api/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_verify'),
 ]
