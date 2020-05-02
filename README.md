@@ -48,7 +48,15 @@ python3 manage.py migrate
 
 Test RestAPI with Postman
 
+## Documentation
 
+This project use mkdocs for create document for other developers can works.
+
+Start docs site
+
+```shell
+mkdocs serve --dev-addr=127.0.0.1:8001
+```
 
 ## References
 

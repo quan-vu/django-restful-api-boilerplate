@@ -1,0 +1,38 @@
+site_name: Restful API Docs
+site_author: Quan Vu
+site_url: https://example.com/
+repo_url: https://github.com/quan-vu/django-restful-api-boilerplate
+nav:
+    - Introduction:
+        - 1. Introduce: 'index.md'
+        - 2. Quickstart: 'quickstart/index.md'
+    - RBAC: 
+        - 1. Introduce to RBAC: 'rbac/index.md'
+        - 2. Create Group & Permissions: 'rbac/create-group-permissions.md'
+        - 3. Assign Permissions: 'rbac/assign-permissions.md'
+    - API Guide: 
+        - Index: 'api-guide/index.md'  
+    - Issues:  
+        - 'Issue Tracker': 'https://github.com/quan-vu/django-restful-api-boilerplate/issues'
+theme: 
+    name: readthedocs
+    custom_dir: docs/custom_theme/
+    include_sidebar: true
+    nav_style: dark
+    navigation_depth: 4
+    prev_next_buttons_location: both
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - python
+        - json
+        - html
+plugins:
+    - search:
+        separator: '[\s\-\.]+'
+extra: 
+    version: 1.0
+extra_css:
+    - css/main.css
+extra_javascript:
+extra_templates:
