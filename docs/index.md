@@ -19,41 +19,41 @@ A Boilerplate for quickstart a Restful API use Django Rest Framework.
 
 ## API Endpoints
 
-<table border="1" class="docutils" id="id13">
+<table class="table table-bordered">
     <colgroup>
-        <col width="50%">
-        <col width="50%">
+        <col width="40%">
+        <col width="60%">
     </colgroup>
-    <thead valign="bottom">
-        <tr class="row-odd">
-            <th class="head">Endpoint</th>
-            <th class="head">Description</th>
+    <thead valign="bottom" class="thead-light">
+        <tr>
+            <th>Endpoint</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody valign="top">
-        <tr class="row-even">
+        <tr>
             <td colspan=2><strong>Authentication</strong></td>
         </tr>
-        <tr class="row-odd">
+        <tr>
             <td>/api/auth/token</td>
             <td>Login with username, password and Generate access token</td>
         </tr>
-        <tr class="row-odd">
+        <tr>
             <td>/api/auth/token</td>
             <td>Refresh access token</td>
         </tr>
-        <tr class="row-even">
+        <tr>
             <td colspan=2><strong>User</strong></td>
         </tr>
-        <tr class="row-even">
+        <tr>
             <td>/api/users</td>
             <td>List all users</td>
         </tr>
-        <tr class="row-even">
+        <tr>
             <td>/api/users/{id}</td>
             <td>Get, Update, Delete a user by id</td>
         </tr>
-        <tr class="row-even">
+        <tr>
             <td>/api/users/{id}/profile</td>
             <td>Get, Update, Delete a user's profile by id</td>
         </tr>

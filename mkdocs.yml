@@ -15,7 +15,7 @@ nav:
     - Issues:  
         - 'Issue Tracker': 'https://github.com/quan-vu/django-restful-api-boilerplate/issues'
 theme: 
-    name: readthedocs
+    name: bootstrap4
     custom_dir: docs/custom_theme/
     include_sidebar: true
     nav_style: dark
@@ -33,6 +33,6 @@ plugins:
 extra: 
     version: 1.0
 extra_css:
-    - css/main.css
+    - css/custom.css
 extra_javascript:
 extra_templates:
