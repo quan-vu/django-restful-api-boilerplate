@@ -52,8 +52,10 @@ Test RestAPI with Postman
 
 ## References
 
-- https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#requirements
-- https://pypi.org/project/djangorestframework-simplejwt/
+- [Django Rest Framework](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#requirements)
+- [JWT Authentication](https://pypi.org/project/djangorestframework-simplejwt/)
+- [Swagger with Django Rest Framework](https://drf-yasg.readthedocs.io/en/stable/readme.html)
+
 
 
 

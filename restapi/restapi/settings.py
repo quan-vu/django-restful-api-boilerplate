@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
+    'drf_yasg',
 
     # Local Apps
     'core',
@@ -118,7 +119,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
 }
 
 SIMPLE_JWT = {
@@ -147,6 +148,40 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Basic': {
+            'type': 'basic'
+      },
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
+
+# Swagger setting for Auth2
+# SWAGGER_SETTINGS = {
+#    'USE_SESSION_AUTH': False,
+#    'SECURITY_DEFINITIONS': {
+#       'Your App API - Swagger': {
+#          'type': 'oauth2',
+#          'authorizationUrl': '/yourapp/o/authorize',
+#          'tokenUrl': '/yourapp/o/token/',
+#          'flow': 'accessCode',
+#          'scopes': {
+#           'read:groups': 'read groups',
+#          }
+#       }
+#    },
+#    'OAUTH2_CONFIG': {
+#       'clientId': 'yourAppClientId',
+#       'clientSecret': 'yourAppClientSecret',
+#       'appName': 'your application name'
+#    },
+# }
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -165,3 +200,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
