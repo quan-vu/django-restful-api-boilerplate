@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from rest_framework import routers
 
 from core import views as core_views
+from posts import views as post_views
 
 # JWT Authentication
 from rest_framework_simplejwt import views as jwt_views
@@ -46,6 +47,7 @@ schema_view = get_schema_view(
 router = routers.DefaultRouter()
 router.register(r'users', core_views.UserViewSet)
 router.register(r'groups', core_views.GroupViewSet)
+router.register(r'posts', post_views.PostViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -59,7 +61,6 @@ urlpatterns = [
 
     # Users, Groups
     path('api/', include(router.urls), name='user_group'),
-
 
     # Swagger docs
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),

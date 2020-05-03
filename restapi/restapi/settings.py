@@ -46,10 +46,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
+    'guardian',
 
     # Local Apps
     'core',
     'authjwt',
+    'events',
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -118,7 +121,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'core.permissions.CustomObjectPermissions',
     ],
 }
 
@@ -181,6 +184,12 @@ SWAGGER_SETTINGS = {
 #       'appName': 'your application name'
 #    },
 # }
+
+# Django Guardian
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # default
+    'guardian.backends.ObjectPermissionBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

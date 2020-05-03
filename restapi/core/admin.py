@@ -1,9 +1,8 @@
 from django.contrib import admin
-
-# Register your models here.
-from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
+from guardian.admin import GuardedModelAdmin
+
 
 from .models import UserProfile
 
@@ -13,7 +12,7 @@ class UserProfileInline(admin.StackedInline):
     verbose_name_plural = 'Profile'
     fk_name = 'user'
 
-class CustomUserAdmin(UserAdmin):
+class CustomUserAdmin(GuardedModelAdmin):
     inlines = (UserProfileInline, )
     list_display = ('username', 'email', 'first_name', 'last_name', '_profile', 'is_staff', 'is_superuser','is_active')
 
