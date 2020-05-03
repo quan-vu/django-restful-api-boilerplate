@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     # Local Apps
     'core',
     'authjwt',
-    'profiles',
 ]
 
 MIDDLEWARE = [

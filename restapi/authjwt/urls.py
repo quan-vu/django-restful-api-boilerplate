@@ -19,9 +19,9 @@ from rest_framework_simplejwt import views as jwt_views
 
 
 urlpatterns = [
-    # /api/auth/
-    path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    # /api/
+    path('auth/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('auth/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     # Allow API users to verify HMAC-signed tokens without having access to signing key
     # path('api/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_verify'),
 ]

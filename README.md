@@ -37,7 +37,9 @@ pip install -r requirements.txt
 Create a new superuser
 
 ```shell
+# Demo user: admin | @dm1n#123 | admin@example.com
 # Demo user: mobileuser | M@bile123 | mobileuser@example.com
+
 python3 manage.py createsuperuser
 ```
 
@@ -57,6 +59,11 @@ Start docs site
 ```shell
 mkdocs serve --dev-addr=127.0.0.1:8001
 ```
+
+## Testing 
+
+- Create sample data
+- Write test case with sample data 
 
 ## References
 

@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
 
 from core import views as core_views
 
@@ -42,13 +43,23 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+router = routers.DefaultRouter()
+router.register(r'users', core_views.UserViewSet)
+router.register(r'groups', core_views.GroupViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/', schema_view, name='openapi-schema'),
 
     # Restful API
     path('api/ping/', core_views.PingView.as_view(), name='client_ping'),
-    path('api/auth/', include('authjwt.urls')),
+    
+    # Authentication
+    path('api/', include('authjwt.urls'), name='auth'),
+
+    # Users, Groups
+    path('api/', include(router.urls), name='user_group'),
+
 
     # Swagger docs
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
