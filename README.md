@@ -65,6 +65,12 @@ mkdocs serve --dev-addr=127.0.0.1:8001
 - Create sample data
 - Write test case with sample data 
 
+## User Guide
+
+Full document to guide user about Django Restful API Boilerplate.
+
+![Django Restful API Boilerplate docs](site/img/user-guide-document.png)
+
 ## References
 
 - [Django Rest Framework](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#requirements)

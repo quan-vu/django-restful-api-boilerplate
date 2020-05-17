@@ -46,21 +46,22 @@ schema_view = get_schema_view(
 
 router = routers.DefaultRouter()
 router.register(r'users', core_views.UserViewSet)
-router.register(r'groups', core_views.GroupViewSet)
+# router.register(r'groups', core_views.GroupViewSet)
 router.register(r'posts', post_views.PostViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/', schema_view, name='openapi-schema'),
 
-    # Restful API
+    ##  Restful API
+    # Core
     path('api/ping/', core_views.PingView.as_view(), name='client_ping'),
     
     # Authentication
     path('api/', include('authjwt.urls'), name='auth'),
 
-    # Users, Groups
-    path('api/', include(router.urls), name='user_group'),
+    # Router for resources
+    path('api/', include(router.urls), name='restful'),
 
     # Swagger docs
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
